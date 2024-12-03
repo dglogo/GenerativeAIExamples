@@ -1,0 +1,14 @@
+.pytest_cache
+__pycache__
+tmp
+.venv
+.uv/
+**/*.egg-info
+**/output.mp3
+kompose
+get_helm.sh
+.env
+.ruff_cache
+data/minio
+eval.txt
+.DS_Store
