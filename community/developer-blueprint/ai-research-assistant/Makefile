@@ -105,32 +105,6 @@ prod: check_env create-minio-data-dir
 	@echo "$(GREEN)Starting production environment with version $(VERSION)...$(NC)"
 	VERSION=$(VERSION) docker compose -f docker-compose-remote.yaml --env-file .env up $(CORE_SERVICES)
 
-# Version bump (minor) and release target
-version-bump:
-	@echo "Current version: $(VERSION)"
-	@new_version=$$(echo $(VERSION) | awk -F. '{$$NF = $$NF + 1;} 1' | sed 's/ /./g'); \
-	sed -i.bak "s/VERSION := $(VERSION)/VERSION := $$new_version/" Makefile; \
-	rm Makefile.bak; \
-	echo "$(GREEN)Version bumped to: $$new_version$(NC)"; \
-	git add Makefile; \
-	git commit -m "chore: bump version to $$new_version"; \
-	git tag -a "v$$new_version" -m "Release v$$new_version"; \
-	git push origin main; \
-	git push origin "v$$new_version"
-
-# Version bump (major) and release target
-version-bump-major:
-	@echo "Current version: $(VERSION)"
-	@new_version=$$(echo $(VERSION) | awk -F. '{$$1 = $$1 + 1; $$2 = 0;} 1' | sed 's/ /./g'); \
-	sed -i.bak "s/VERSION := $(VERSION)/VERSION := $$new_version/" Makefile; \
-	rm Makefile.bak; \
-	echo "$(GREEN)Version bumped to: $$new_version$(NC)"; \
-	git add Makefile; \
-	git commit -m "chore: bump major version to $$new_version"; \
-	git tag -a "v$$new_version" -m "Release v$$new_version"; \
-	git push origin main; \
-	git push origin "v$$new_version"
-
 # Clean up containers and volumes
 clean:
 	docker compose -f docker-compose.yaml down -v
@@ -143,4 +117,4 @@ format:
 
 ruff: lint format
 
-.PHONY: check_env dev clean ruff prod version-bump version-bump-major uv model-prod model-dev all-services create-minio-data-dir
+.PHONY: check_env dev clean ruff prod uv model-prod model-dev all-services create-minio-data-dir
