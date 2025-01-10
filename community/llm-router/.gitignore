@@ -1,0 +1,5 @@
+.ipynb_checkpoints/
+*.pyc
+app/.env
+models
+router_controller/target/

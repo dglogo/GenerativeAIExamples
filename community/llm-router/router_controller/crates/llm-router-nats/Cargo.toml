@@ -1,0 +1,21 @@
+[package]
+name = "llm-router-nats"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+# -- Async
+tokio = { version = "1", features = ["full"] }
+
+# -- Errors
+thiserror = "1"
+
+# -- JSON
+serde = { version = "1", features = ["derive"] }
+serde_json = "1"
+
+# -- Nats.io
+nats = "0.25.0"
+
+[dev-dependencies]
+anyhow = "1"

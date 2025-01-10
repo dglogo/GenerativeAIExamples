@@ -1,0 +1,62 @@
+policy:
+  url: http://127.0.0.1:8000/v2/models/task_router_ensemble/infer
+llms:
+  - name: Brainstorming
+    api_base: https://integrate.api.nvidia.com
+    api_key: ""
+    model: meta/llama-3.1-70b-instruct
+
+  - name: Chatbot
+    api_base: https://integrate.api.nvidia.com
+    api_key: ""
+    model: mistralai/mixtral-8x22b-instruct-v0.1
+
+  - name: Classification
+    api_base: https://integrate.api.nvidia.com
+    api_key: ""
+    model: meta/llama-3.1-8b-instruct
+
+  - name: Closed QA
+    api_base: https://integrate.api.nvidia.com
+    api_key: ""
+    model: meta/llama-3.1-70b-instruct
+
+  - name: Code Generation
+    api_base: https://integrate.api.nvidia.com
+    api_key: ""
+    model: mistralai/mixtral-8x22b-instruct-v0.1
+
+  - name: Extraction
+    api_base: https://integrate.api.nvidia.com
+    api_key: ""
+    model: meta/llama-3.1-8b-instruct
+
+  - name: Open QA
+    api_base: https://integrate.api.nvidia.com
+    api_key: ""
+    model: meta/llama-3.1-70b-instruct
+
+  - name: Other
+    api_base: https://integrate.api.nvidia.com
+    api_key: ""
+    model: mistralai/mixtral-8x22b-instruct-v0.1
+
+  - name: Rewrite
+    api_base: https://integrate.api.nvidia.com
+    api_key: ""
+    model: meta/llama-3.1-8b-instruct
+
+  - name: Summarization
+    api_base: https://integrate.api.nvidia.com
+    api_key: ""
+    model: meta/llama-3.1-70b-instruct
+
+  - name: Text Generation
+    api_base: https://integrate.api.nvidia.com
+    api_key: ""
+    model: mistralai/mixtral-8x22b-instruct-v0.1
+
+  - name: Unknown
+    api_base: https://integrate.api.nvidia.com
+    api_key: ""
+    model: meta/llama-3.1-8b-instruct

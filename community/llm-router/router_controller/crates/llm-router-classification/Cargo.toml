@@ -1,0 +1,29 @@
+[package]
+name = "llm-router-classification"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+# -- Async
+tokio = { version = "1", features = ["full"] }
+
+# -- Derive traits
+derive_more = { version = "1.0.0-beta", features = ["from"] }
+
+# -- Errors
+thiserror = "1"
+
+# -- JSON
+serde = { version = "1", features = ["derive"] }
+serde_json = "1"
+serde_with = { version = "3", features = ["macros"]}
+
+# -- Random numbers
+rand = { version = "0.8.5" }
+
+# -- Web
+actix-web = "4"
+reqwest = { version = "0.12", features = ["json"] }
+
+[dev-dependencies]
+anyhow = "1"
